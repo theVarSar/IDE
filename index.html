@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jqueryui.min.js"></script>
+  <title>CodePlayer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <div id="container">
+      <div id="titlebar">
+        <div id="title">
+          CodePlayer
+        </div>
+        <form class="" action="/" method="post">
+
+        <div id="runButton">
+          <button id="run" type="submit">Run</button>
+        </div>
+        <div id="menu">
+          <ul>
+            <li class="selector selected" name="html">Python</li>
+            <li class="selector" name="css">C++</li>
+            <li class="selector selected" name="result" style="borderright:  none">Result</li>
+          </ul>
+        </div>
+      </div>
+      <div class="break"></div>
+      <div class="codecontainer" id="htmlContainer">
+        <span class="containerTitle">Python</span>
+        <textarea class="code" name="pcode" id="html">
+  print("hello, world")
+  </textarea>
+      </div>
+      <div class="codecontainer" id="cssContainer">
+        <span class="containerTitle">C++</span>
+        <textarea class="code" id="css">
+#include<iostream.h>
+  </textarea>
+</div>
+      <div class="codecontainer" id="resultContainer">
+        <span class="containerTitle">Result</span>
+        <div class="resultContainer">
+          <iframe id="resultFrame"></iframe>
+        </div>
+      </div>
+</div>
+</form>
+<script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
