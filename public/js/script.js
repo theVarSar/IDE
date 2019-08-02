@@ -1,4 +1,4 @@
-$(function() {
+window.onload = $(function() {
   var height = $(window).height() - 40;
   var editor_open = "Python_editor";
 
