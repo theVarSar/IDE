@@ -63,7 +63,10 @@ setTimeout(function () {
         console.log(obj2);
         // console.log(res);
         console.log(obj2.stdout);
-        res.send(obj2.stdout);
+        // res.send(obj2.stdout);
+        res.send({output : obj2.stdout});
+
+
       }
     });
 }, 2000);
