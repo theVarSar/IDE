@@ -14,14 +14,23 @@ app.get("/", function(req, res){
 });
 
 app.post("/",function(req, res){
-  var pythoncode = req.body.pcode;
+    var pythoncode = req.body.pcode;
+    var language = req.body.editor_open;
+    var language_id = null;
+
+    if(language == "Python_editor") {
+        language_id = "34";
+    } else {
+        language_id = "11";
+    }
 // console.log(pythoncode);
   var data = {
     "source_code": pythoncode,
-    "language_id": "34"
+    "language_id": language_id
   };
 var jsonData = JSON.stringify(data);
 
+console.log(data);
   var option = {
     url: 'https://api.judge0.com/submissions/?base64_encoded=false&wait=false',
     method: "post",
@@ -65,8 +74,6 @@ setTimeout(function () {
         console.log(obj2.stdout);
         // res.send(obj2.stdout);
         res.send({output : obj2.stdout});
-
-
       }
     });
 }, 2000);
