@@ -20,7 +20,7 @@ app.post("/",function(req, res){
     "source_code": pythoncode,
     "language_id": "34"
   };
- var jsonData = JSON.stringify(data);
+var jsonData = JSON.stringify(data);
 
   var option = {
     url: 'https://api.judge0.com/submissions/?base64_encoded=false&wait=false',
@@ -35,10 +35,39 @@ app.post("/",function(req, res){
     if(error){
       console.log("ERROR");
     }else{
-      console.log(response.body);
+      // res.send(response.body);
+      // console.log(response.body);
+      // console.log(response.body["token"]);
+      var obj = JSON.parse(response.body);
+      newtoken = obj.token;
+      console.log(newtoken);
     }
-  });
 
+    var option2 = {
+      url: 'https://api.judge0.com/submissions/'+newtoken,
+      method: "get",
+      headers: {
+        "Content-Type": "application/json"
+      }
+      // body: jsonData2
+    };
+
+setTimeout(function () {
+    // console.log(url);
+    request(option2, function(error, response, body){
+      if(error){
+        console.log(error);
+      }else{
+        // console.log(response);
+        var obj2 = JSON.parse(response.body);
+        console.log(obj2);
+        // console.log(res);
+        console.log(obj2.stdout);
+        res.send(obj2.stdout);
+      }
+    });
+}, 2000);
+  });
 });
 
 app.listen("3000", function(){

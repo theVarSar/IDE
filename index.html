@@ -17,7 +17,7 @@
         <div id="title">
           CodePlayer
         </div>
-        <form class="" action="/" method="post">
+
 
         <div id="runButton">
           <button id="run" type="submit">Run</button>
@@ -31,26 +31,26 @@
         </div>
       </div>
       <div class="break"></div>
-      <div class="codecontainer" id="htmlContainer">
+      <div class="codecontainer" id="Python_editorContainer">
         <span class="containerTitle">Python</span>
-        <textarea class="code" name="pcode" id="html">
-  print("hello, world")
+        <textarea class="code" name="pcode" id="Python_editor">
+print("hello, world")
   </textarea>
       </div>
-      <div class="codecontainer" id="cssContainer">
+      <div class="codecontainer" id="C_editorContainer">
         <span class="containerTitle">C++</span>
-        <textarea class="code" id="css">
+        <textarea class="code" id="C_editor">
 #include<iostream.h>
   </textarea>
-</div>
-      <div class="codecontainer" id="resultContainer">
+
+</div >
+      <div class="vl codecontainer" id="resultContainer">
         <span class="containerTitle">Result</span>
         <div class="resultContainer">
-          <iframe id="resultFrame"></iframe>
+          <textarea id="result" rows="20" cols="80"></textarea>
         </div>
       </div>
 </div>
-</form>
 <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
